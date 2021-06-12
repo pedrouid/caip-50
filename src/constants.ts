@@ -1,6 +1,8 @@
 import { Caip2NamespaceFormats } from './types';
 
 export const CAIP50_CODE = 0xca;
+export const CAIP50_PREFIX = 'z';
+export const CAIP50_ENCODING = 'base58btc';
 
 export const CAIP2_NAMESPACE_FORMATS: Caip2NamespaceFormats = {
   bip122: {
