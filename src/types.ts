@@ -1,7 +1,12 @@
+import u8a from 'uint8arrays';
+
 export interface Caip2NamespaceFormats {
   [namespace: string]: {
     code: number;
-    encoding: { chainId: string; address: string };
+    encoding: {
+      chainId: u8a.fromString.SupportedEncodings;
+      address: u8a.fromString.SupportedEncodings;
+    };
   };
 }
 

@@ -29,14 +29,6 @@ export function getCaip2NamespaceFormat(namespace: string) {
   return format;
 }
 
-export function fromString(value: string, encoding: string): Uint8Array {
-  if (encoding === 'number') {
-    value = Number(value).toString(16);
-    encoding = 'base16';
-  }
-  return u8a.fromString(value, encoding as any);
-}
-
 export function parseCaip10(caip10: CAIP10Account): CAIP10AccountParams {
   if (typeof caip10 !== 'string') return caip10;
   const [address, chainId] = caip10.split('@');
