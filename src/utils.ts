@@ -37,12 +37,13 @@ export function getCaip2NamespaceFormatByCode(code: number): Caip2NamespaceForma
 
 export function parseCaip10(caip10: CAIP10Account): CAIP10AccountParams {
   if (typeof caip10 !== "string") return caip10;
-  const [address, chainId] = caip10.split("@");
+  const [namespace, reference, address] = caip10.split(":");
+  const chainId = formatCaip2({ namespace, reference });
   return { chainId, address };
 }
 
 export function formatCaip10(params: CAIP10AccountParams): string {
-  return `${params.address}@${params.chainId}`;
+  return `${params.chainId}:${params.address}`;
 }
 
 export function parseCaip2(caip2: CAIP2ChainId): CAIP2ChainIdParams {
